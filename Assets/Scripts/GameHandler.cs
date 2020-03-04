@@ -2,15 +2,11 @@
 
 public class GameHandler : MonoBehaviour
 {
+    LevelGrid levelGrid;
+
     void Start()
     {
-        GameObject snakeHeadGameObject = new GameObject();
-        SpriteRenderer snakeSpriteRenderer = snakeHeadGameObject.AddComponent<SpriteRenderer>();
-        snakeSpriteRenderer.sprite = GameAssets.gameAssets.snakeHeadSprite;
+        levelGrid = new LevelGrid(50, 50);
     }
 
-    void Update()
-    {
-        
-    }
 }

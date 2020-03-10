@@ -30,4 +30,9 @@ public class GameHandler : MonoBehaviour
     {
         return score++;
     }
+
+    public static void ResetScore()
+    {
+        score = 0;
+    }
 }

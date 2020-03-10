@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class GameOverWindow : MonoBehaviour
 {
@@ -17,5 +16,6 @@ public class GameOverWindow : MonoBehaviour
     public void RetryGame()
     {
         SceneManager.LoadScene("MainScene");
+        GameHandler.ResetScore();
     }
 }

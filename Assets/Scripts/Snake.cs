@@ -8,6 +8,8 @@ public class Snake : MonoBehaviour
     float gridMoveTimer;
     float gridMoveTimerMax;
     LevelGrid levelGrid;
+    [SerializeField]
+    GameOverWindow gameOver;
     int snakeBodySize;
     List<Vector2Int> snakeMovePositionList;
     List<Transform> snakeBodyTransformList;
@@ -27,7 +29,7 @@ public class Snake : MonoBehaviour
     void Awake()
     {
         gridPosition = new Vector2Int(15, 15);
-        gridMoveDirection = new Vector2Int(1, 0);
+        gridMoveDirection = new Vector2Int(Random.Range(-1,1), Random.Range(-1,1));
         gridMoveTimerMax = 0.2f;
         gridMoveTimer = gridMoveTimerMax;
         snakeMovePositionList = new List<Vector2Int>();
@@ -125,6 +127,7 @@ public class Snake : MonoBehaviour
                 if (snakeBodyTransformList[i].position == transform.position)
                 {
                     state = State.Dead;
+                    gameOver.SetWindowActive();
                 }
             }
 

@@ -8,6 +8,8 @@ public class GameAssets : MonoBehaviour
     public Sprite foodSprite;
     public Sprite snakeBody;
 
+    public AudioClip snakeMove;
+
     void Awake()
     {
         gameAssets = this;

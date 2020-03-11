@@ -99,6 +99,9 @@ public class Snake : MonoBehaviour
             gridMoveTimer -= gridMoveTimerMax;
             snakeMovePositionList.Insert(0, gridPosition);
             gridPosition += gridMoveDirection;
+
+            SoundManager.PlaySound();
+
             gridPosition = levelGrid.ValidateGridPosition(gridPosition);
             bool snakeAteFood = levelGrid.TrySnakeEatFood(gridPosition);
 

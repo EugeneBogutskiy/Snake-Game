@@ -18,4 +18,10 @@ public class GameOverWindow : MonoBehaviour
         SceneManager.LoadScene("MainScene");
         GameHandler.ResetScore();
     }
+
+    public void MainMenuClickBtn()
+    {
+        SceneManager.LoadScene("MainMenuScene");
+        GameHandler.ResetScore();
+    }
 }

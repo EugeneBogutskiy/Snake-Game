@@ -40,5 +40,6 @@ public class PausedWindow : MonoBehaviour
     public void PushMainMenuBtn()
     {
         SceneManager.LoadScene("MainMenuScene");
+        GameHandler.ResetScore();
     }
 }

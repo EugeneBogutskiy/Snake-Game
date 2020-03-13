@@ -100,8 +100,6 @@ public class Snake : MonoBehaviour
             snakeMovePositionList.Insert(0, gridPosition);
             gridPosition += gridMoveDirection;
 
-            SoundManager.PlaySound();
-
             gridPosition = levelGrid.ValidateGridPosition(gridPosition);
             bool snakeAteFood = levelGrid.TrySnakeEatFood(gridPosition);
 
@@ -131,6 +129,8 @@ public class Snake : MonoBehaviour
                 {
                     state = State.Dead;
                     gameOver.SetWindowActive();
+                    Score.TrySetNewHighScore(GameHandler.GetScore());
+                    SoundManager.PlaySoundDead();
                 }
             }
 

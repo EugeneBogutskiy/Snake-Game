@@ -8,6 +8,8 @@ public class ScoreWindow : MonoBehaviour
     void Awake()
     {
         scoreText = transform.Find("ScoreText").GetComponent<Text>();
+        int highScore = Score.GetHighScore();
+        transform.Find("HighScoreText").GetComponent<Text>().text = "HIGH SCORE\n" + highScore.ToString();
     }
 
     void Update()
